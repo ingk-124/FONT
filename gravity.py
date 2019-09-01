@@ -67,6 +67,3 @@ def edit_image(im):
     return im_G, im_adjusted, G, M["00"]
 
 
-def save_image(path, directly):
-    image = edit_image(open_as_gray(path))
-    image[0].save(directly + "/" + re.findall(r'(.*/)?(.+)\.png', path)[0][1] + "_G.png", 'png')
