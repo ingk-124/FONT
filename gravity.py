@@ -2,6 +2,22 @@ from PIL import Image, ImageDraw
 import numpy as np
 
 
+def generate_char_img(char, fontname, size=(300, 300)):
+    img = Image.new('L', size, 255)
+    draw = ImageDraw.Draw(img)
+    fontsize = int(size[0] * 0.8)
+    font = ImageFont.truetype(fontname, fontsize)
+
+    # adjust character position.
+    char_displaysize = font.getsize(char)
+    offset = tuple((si - sc) // 2 for si, sc in zip(size, char_displaysize))
+    assert all(o >= 0 for o in offset)
+
+    # adjust offset, half value is right size for height axis.
+    draw.text((offset[0], offset[1] // 2), char, font=font, fill=0)
+    return img
+
+
 def open_as_gray(path):
     im = Image.open(path).convert("L")
     return im
