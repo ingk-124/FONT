@@ -1,10 +1,5 @@
-from PIL import Image
-from PIL import ImageDraw
-from PIL import ImageFont
-from PIL import Image, ImageDraw, ImageMath
+from PIL import Image, ImageDraw
 import numpy as np
-import re
-import png
 
 
 def open_as_gray(path):
@@ -65,5 +60,3 @@ def edit_image(im):
     draw.ellipse(((G[1] - r, G[0] - r), (G[1] + r, G[0] + r)), fill=(210, 50, 50))
 
     return im_G, im_adjusted, G, M["00"]
-
-
