@@ -5,7 +5,7 @@ import re
 if __name__ == '__main__':
     fontname = ["ヒラギノ明朝 ProN", "Osaka", "Klee"]
     # fontname = ["ヒラギノ明朝 ProN"]
-    with open("/Users/inagakishinichiro/Desktop/py3works/FONT/kanji.txt") as f:
+    with open("kanji.txt") as f:
         characters = f.readlines()[0]
     for font in fontname:
         path_csv = "output/{}_log.csv".format(font)

@@ -34,9 +34,3 @@ class Character:
     def main(self):
         self.search_g()
         self.save_images()
-
-
-if __name__ == '__main__':
-    c = Character(char="L", font="/Users/inagakishinichiro/Library/Fonts/NotoSerifCJKjp-Medium.otf", size=(1000, 1000))
-    c.main()
-    print(c.G, c.M)

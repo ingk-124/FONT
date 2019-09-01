@@ -3,7 +3,7 @@ from tqdm import tqdm
 import re
 import csv
 
-with open("/Users/inagakishinichiro/Desktop/py3works/FONT/kanji.txt") as f:
+with open("kanji.txt") as f:
     characters = f.readlines()[0]
 
 font_list = ["/System/Library/Fonts/ヒラギノ明朝 ProN.ttc",

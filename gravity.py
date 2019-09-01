@@ -70,11 +70,3 @@ def edit_image(im):
 def save_image(path, directly):
     image = edit_image(open_as_gray(path))
     image[0].save(directly + "/" + re.findall(r'(.*/)?(.+)\.png', path)[0][1] + "_G.png", 'png')
-
-
-if __name__ == "__main__":
-    # edit_image("kanji0.png").save(re.findall(r'(.+)\.png', "kanji0.png")[0] + "_G.png", 'png')
-    # char = input()
-    char = "呉"
-    png.save_img(char, "char")
-    # save_image("char.png", "output")
