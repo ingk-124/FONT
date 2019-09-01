@@ -18,11 +18,6 @@ def generate_char_img(char, fontname, size=(300, 300)):
     return img
 
 
-def open_as_gray(path):
-    im = Image.open(path).convert("L")
-    return im
-
-
 def im_to_np(im):
     im_array = np.asarray(im)
     return np.array([[[0 if x else 1] for x in y] for y in im_array]).reshape(im_array.shape)
