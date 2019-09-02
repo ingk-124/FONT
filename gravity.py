@@ -61,13 +61,14 @@ def edit_image(im):
         M_nm = np.sum(np.power(x, n) * np.power(y, m) * mat)
         M[str(n) + str(m)] = M_nm
 
-    G = (int(round(M["10"] / M["00"])), int(round(M["01"] / M["00"])))
+    G = (int(round(M["01"] / M["00"])), int(round(M["10"] / M["00"])))
+    euclid = np.linalg.norm(np.array(G) - np.array(mat.shape) // 2)
 
     im_adjusted = Image.fromarray(np.uint8(210 - mat * 210)).convert("RGB")
     im_G = Image.fromarray(np.uint8(210 - mat * 210)).convert("RGB")
 
     draw = ImageDraw.Draw(im_G)
     r = im_G.size[0] / 25
-    draw.ellipse(((G[1] - r, G[0] - r), (G[1] + r, G[0] + r)), fill=(210, 50, 50))
+    draw.ellipse(((G[0] - r, G[1] - r), (G[0] + r, G[1] + r)), fill=(210, 50, 50))
 
-    return im_G, im_adjusted, G, M["00"]
+    return im_G, im_adjusted, G, M["00"], euclid
