@@ -14,7 +14,7 @@ font_list = ["/System/Library/Fonts/ヒラギノ明朝 ProN.ttc",
 
 if __name__ == '__main__':
     for font in font_list:
-        with open("output/{}_log.csv".format(re.findall(r'(.*/)?(.+)(\.[a-z]{3})', font)[0][-2]), 'a') as f:
+        with open("output/{}.csv".format(re.findall(r'(.*/)?(.+)(\.[a-z]{3})', font)[0][-2]), 'a') as f:
             writer = csv.writer(f, lineterminator='\n')
             writer.writerow(("character", "G_x", "G_y", "M", "Euclid"))
             with tqdm(characters) as pbar:
