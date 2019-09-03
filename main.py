@@ -12,7 +12,7 @@ font_list = ["/System/Library/Fonts/ヒラギノ明朝 ProN.ttc",
              "/AssetData/Klee.ttc"]
 
 if __name__ == '__main__':
-    for font in font_list[1:2]:
+    for font in font_list:
         with open("output/{}.csv".format(re.findall(r'(.*/)?(.+)(\.[a-z]{3})', font)[0][-2]), 'w') as f:
             writer = csv.writer(f, lineterminator='\n')
             writer.writerow(("character", "G_x", "G_y", "M", "Euclid"))
